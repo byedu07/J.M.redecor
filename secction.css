@@ -1,0 +1,145 @@
+/* Secciones */
+.section {
+    height: 100vh; /* Cada sección ocupa el 100% de la altura de la ventana */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    padding: 20px;
+    border-bottom: 2px solid #ddd;
+}
+
+.section h1 {
+    font-size: 2.5rem;
+    margin-bottom: 20px;
+}
+
+.section p {
+    font-size: 1.2rem;
+    color: #555;
+}
+
+/* Estilos específicos para cada sección */
+#inicio {
+    background-color: #f9f9f9;
+    background-image: url(imagenes/logos/jm\ refromas.png);
+    display: flex;
+    flex-direction: column;
+    height: 100vh; /* Asegura que ocupe toda la altura */
+}
+
+/* Div del logo dentro de la sección de inicio */
+.logo-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: #fff; /* Color de fondo opcional */
+    margin: 0; /* Elimina márgenes */
+    padding: 0; /* Elimina el padding */
+    height: auto; /* Permite que la altura se ajuste automáticamente */
+}
+
+/* Aseguramos que la imagen del logo no tenga márgenes */
+.logo-container img {
+    max-width: 180px; /* Ajusta el tamaño del logo */
+    height: auto;
+}
+
+/* Contenedor de inicio (para el texto e imagen) */
+.inicio-contenedor {
+    height: 80%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    max-width: 1500px;
+    width: 100%;
+    
+    padding: 0 20px;
+    margin-top: -20px; /* Elimina el espacio entre el logo y el siguiente contenido */
+}
+
+/* Div para el texto (65%) */
+.inicio-texto {
+    width: 65%;
+    text-align: left;
+    margin-right: 0; /* Elimina separación extra entre texto e imagen */
+}
+
+.inicio-texto h1 {
+    font-size: 2.5rem;
+    margin-bottom: 20px;
+}
+
+.inicio-texto p {
+    font-size: 1.2rem;
+    color: #555;
+    margin-bottom: 15px;
+}
+
+/* Div para la imagen (35%) */
+.inicio-imagen {
+    width: 30%; /* Aumentamos el ancho del contenedor de la imagen */
+    text-align: center;
+    padding: 0; /* Eliminamos el padding para dar más espacio a la imagen */
+    margin-left: 200px; /* Mueve la imagen hacia la derecha */
+}
+
+.inicio-imagen img {
+    width: 100%; /* La imagen ocupa el 100% del ancho de su contenedor */
+    height: auto; /* Mantiene la proporción de la imagen */
+    max-height: 500px; /* Limita la altura máxima de la imagen */
+    border-radius: 10px; /* Bordes redondeados para la imagen */
+    box-shadow: 0 4px 8px #ce2c17; /* Sombra suave */
+    object-fit: cover; /* Asegura que la imagen cubra el espacio sin distorsionarse */
+}
+
+/* MEDIA QUERIES - Haciendo la sección responsive */
+
+/* Para pantallas pequeñas (móviles y tabletas) */
+@media screen and (max-width: 768px) {
+    .inicio-contenedor {
+        flex-direction: column; /* Cambiamos a columna para apilar texto e imagen */
+        height: auto;
+        padding: 20px;
+    }
+
+    .inicio-texto {
+        width: 100%; /* El texto ocupará toda la fila */
+        text-align: center; /* Centra el texto */
+        margin-bottom: 20px; /* Espaciado inferior */
+    }
+
+    .inicio-imagen {
+        width: 100%; /* La imagen ocupará todo el ancho disponible */
+        margin-left: 0; /* Eliminamos el margen de la imagen */
+        text-align: center; /* Centra la imagen */
+    }
+
+    .inicio-imagen img {
+        max-height: 300px; /* Reducimos la altura máxima de la imagen */
+        margin-top: 20px; /* Añadimos margen superior */
+    }
+
+    .section h1 {
+        font-size: 1.8rem; /* Reducimos el tamaño del título */
+    }
+
+    .section p {
+        font-size: 1rem; /* Reducimos el tamaño del texto */
+    }
+}
+
+/* Para pantallas muy pequeñas (móviles más pequeños) */
+@media screen and (max-width: 480px) {
+    .inicio-texto h1 {
+        font-size: 1.6rem; /* Reducimos aún más el tamaño del título */
+    }
+
+    .inicio-texto p {
+        font-size: 0.9rem; /* Reducimos aún más el tamaño del texto */
+    }
+
+    .inicio-imagen img {
+        max-height: 250px; /* Aumentamos la restricción de la altura */
+    }
+}
