@@ -1,3 +1,3 @@
 # J.M.redecor
 
-https://byedu07.github.io/J.M.redecor/
+https://georgeeduardtp.github.io/J.M.redecor/
