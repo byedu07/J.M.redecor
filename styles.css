@@ -50,10 +50,27 @@ a:hover::after {
     background: linear-gradient(rgba(44, 62, 80, 0.8), rgba(44, 62, 80, 0.8)), url('https://images.unsplash.com/photo-1618221195710-dd6b41faaea6?ixlib=rb-1.2.1&auto=format&fit=crop&w=1600&q=80');
     background-size: cover;
     background-position: center;
-    background-attachment: fixed;
-    color: white;
     position: relative;
     overflow: hidden;
+    color: white;
+}
+
+@media (min-width: 769px) {
+    .hero {
+        background-attachment: fixed;
+    }
+}
+
+@media (max-width: 768px) {
+    .hero {
+        background-attachment: scroll;
+        background-position: center center;
+        min-height: 100vh;
+    }
+    
+    .hero::before {
+        opacity: 0.4;
+    }
 }
 
 .hero::before {
