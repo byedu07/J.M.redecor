@@ -1,0 +1,1143 @@
+:root {
+    --primary-color: #2c3e50;
+    --secondary-color: #e74c3c;
+    --light-color: #ecf0f1;
+    --dark-color: #2c3e50;
+    --card-height: 450px;
+    --card-padding: 1.5rem;
+    --card-border-radius: 15px;
+    --card-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    --gradient-primary: linear-gradient(135deg, #2c3e50, #3498db);
+    --gradient-secondary: linear-gradient(135deg, #e74c3c, #f39c12);
+    --gradient-dark: linear-gradient(135deg, #2c3e50, #34495e);
+}
+
+/* Efectos de scroll suave */
+html {
+    scroll-behavior: smooth;
+}
+
+/* Cursor personalizado */
+body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    padding-top: 76px;
+    cursor: default;
+}
+
+/* Efecto de hover en links */
+a {
+    position: relative;
+    transition: all 0.3s ease;
+}
+
+a::after {
+    content: '';
+    position: absolute;
+    width: 0;
+    height: 2px;
+    bottom: -2px;
+    left: 0;
+    background: var(--gradient-secondary);
+    transition: width 0.3s ease;
+}
+
+a:hover::after {
+    width: 100%;
+}
+
+/* Hero Section Mejorado */
+.hero {
+    background: linear-gradient(rgba(44, 62, 80, 0.8), rgba(44, 62, 80, 0.8)), url('https://images.unsplash.com/photo-1618221195710-dd6b41faaea6?ixlib=rb-1.2.1&auto=format&fit=crop&w=1600&q=80');
+    background-size: cover;
+    background-position: center;
+    background-attachment: fixed;
+    color: white;
+    position: relative;
+    overflow: hidden;
+}
+
+.hero::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(45deg, rgba(231, 76, 60, 0.3), rgba(52, 152, 219, 0.3));
+    animation: gradientShift 10s infinite alternate;
+}
+
+@keyframes gradientShift {
+    0% {
+        opacity: 0.3;
+        transform: scale(1);
+    }
+    100% {
+        opacity: 0.6;
+        transform: scale(1.1);
+    }
+}
+
+/* Efecto de parallax en las tarjetas */
+.skill-card, .proyecto-card, .reseña-card {
+    transform: translateY(0);
+    transition: all 0.5s cubic-bezier(0.4, 0, 0.2, 1);
+    position: relative;
+    overflow: hidden;
+}
+
+.skill-card:hover, .proyecto-card:hover, .reseña-card:hover {
+    transform: translateY(-10px);
+    box-shadow: 0 15px 30px rgba(0, 0, 0, 0.2);
+}
+
+/* Efecto de brillo en hover */
+.skill-card::before, .proyecto-card::before, .reseña-card::before {
+    content: '';
+    position: absolute;
+    top: -50%;
+    left: -50%;
+    width: 200%;
+    height: 200%;
+    background: linear-gradient(45deg, transparent, rgba(255,255,255,0.1), transparent);
+    transform: rotate(45deg);
+    transition: all 0.6s;
+    opacity: 0;
+}
+
+.skill-card:hover::before, .proyecto-card:hover::before, .reseña-card:hover::before {
+    animation: shine 1.5s;
+}
+
+@keyframes shine {
+    0% {
+        opacity: 0;
+        transform: translateX(-100%) rotate(45deg);
+    }
+    50% {
+        opacity: 1;
+    }
+    100% {
+        opacity: 0;
+        transform: translateX(100%) rotate(45deg);
+    }
+}
+
+/* Efecto de loading en skill bars */
+.skill-bar {
+    position: relative;
+    overflow: hidden;
+}
+
+.skill-bar::after {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    height: 100%;
+    width: 100%;
+    background: linear-gradient(90deg, transparent, rgba(255,255,255,0.2), transparent);
+    animation: loading 1.5s infinite;
+}
+
+@keyframes loading {
+    0% {
+        transform: translateX(-100%);
+    }
+    100% {
+        transform: translateX(100%);
+    }
+}
+
+/* Efecto moderno en botones */
+.btn-primary {
+    background-color: var(--secondary-color);
+    border: none;
+    position: relative;
+    overflow: hidden;
+    z-index: 1;
+    transition: all 0.3s ease;
+    color: white;
+    font-weight: 600;
+    padding: 0.8rem 2rem;
+}
+
+.btn-primary:hover {
+    background-color: var(--primary-color);
+    transform: translateY(-2px);
+    box-shadow: 0 5px 15px rgba(231, 76, 60, 0.3);
+}
+
+/* Efecto de scroll en imágenes */
+.proyecto-imagen {
+    position: relative;
+    overflow: hidden;
+    border-radius: var(--card-border-radius);
+}
+
+.proyecto-imagen img {
+    transition: transform 0.5s ease;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.proyecto-card:hover .proyecto-imagen img {
+    transform: scale(1.08);
+}
+
+.proyecto-overlay {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    background: linear-gradient(to top, rgba(44, 62, 80, 0.9), rgba(44, 62, 80, 0));
+    padding: 30px 20px;
+    color: white;
+    transform: translateY(100%);
+    transition: transform 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-end;
+    height: 100%;
+}
+
+.proyecto-card:hover .proyecto-overlay {
+    transform: translateY(0);
+}
+
+.proyecto-overlay h4 {
+    margin: 0;
+    font-size: 1.5rem;
+    font-weight: 600;
+    transform: translateY(20px);
+    opacity: 0;
+    transition: all 0.4s ease 0.1s;
+}
+
+.proyecto-overlay p {
+    margin: 10px 0 0;
+    font-size: 1rem;
+    opacity: 0;
+    transform: translateY(20px);
+    transition: all 0.4s ease 0.2s;
+}
+
+.proyecto-card:hover .proyecto-overlay h4,
+.proyecto-card:hover .proyecto-overlay p {
+    transform: translateY(0);
+    opacity: 1;
+}
+
+/* Efecto de typing en textos principales */
+@keyframes typing {
+    from {
+        width: 0;
+    }
+    to {
+        width: 100%;
+    }
+}
+
+.hero h1 {
+    color: white;
+    font-size: 3.5rem;
+    font-weight: 700;
+    text-shadow: 2px 2px 4px rgba(0,0,0,0.3);
+    margin-bottom: 1.5rem;
+}
+
+.hero .lead {
+    color: white;
+    font-size: 1.5rem;
+    text-shadow: 1px 1px 2px rgba(0,0,0,0.3);
+    margin-bottom: 2rem;
+}
+
+/* Efecto de número contador */
+.calificacion-general h3 {
+    position: relative;
+    display: inline-block;
+}
+
+.calificacion-general h3::after {
+    content: '';
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    background: var(--gradient-secondary);
+    left: 0;
+    top: 0;
+    opacity: 0.1;
+    border-radius: 50%;
+    animation: pulse 2s infinite;
+}
+
+@keyframes pulse {
+    0% {
+        transform: scale(1);
+        opacity: 0.1;
+    }
+    50% {
+        transform: scale(1.2);
+        opacity: 0.2;
+    }
+    100% {
+        transform: scale(1);
+        opacity: 0.1;
+    }
+}
+
+/* Efecto de scroll en mapa */
+.mapa-container {
+    position: relative;
+    overflow: hidden;
+    transform: perspective(1000px) rotateX(0deg);
+    transition: transform 0.5s ease;
+}
+
+.mapa-container:hover {
+    transform: perspective(1000px) rotateX(5deg);
+}
+
+/* Efecto de hover en reseñas */
+.reseña-card {
+    position: relative;
+}
+
+.reseña-card::after {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(135deg, transparent 50%, rgba(231, 76, 60, 0.1));
+    opacity: 0;
+    transition: opacity 0.3s ease;
+}
+
+.reseña-card:hover::after {
+    opacity: 1;
+}
+
+/* Efecto de scroll en navbar */
+.navbar {
+    transition: all 0.3s ease;
+    backdrop-filter: blur(10px);
+    -webkit-backdrop-filter: blur(10px);
+}
+
+.navbar.scrolled {
+    background: rgba(255, 255, 255, 0.9) !important;
+    box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
+}
+
+/* Formulario moderno */
+.form-control {
+    border: 2px solid transparent;
+    background: rgba(236, 240, 241, 0.5);
+    backdrop-filter: blur(5px);
+    transition: all 0.3s ease;
+}
+
+.form-control:focus {
+    border-color: var(--secondary-color);
+    background: white;
+    box-shadow: 0 0 15px rgba(231, 76, 60, 0.2);
+}
+
+/* Efecto de loading en botón de envío */
+@keyframes buttonLoading {
+    0% {
+        background-position: 0% 50%;
+    }
+    100% {
+        background-position: 100% 50%;
+    }
+}
+
+button[type="submit"]:disabled {
+    background-size: 200% 200%;
+    animation: buttonLoading 1.5s ease infinite;
+}
+
+/* Efectos de scroll reveal */
+[data-aos] {
+    opacity: 0;
+    transform: translateY(20px);
+    transition: all 0.6s ease;
+}
+
+[data-aos].aos-animate {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+/* Estilos comunes para todas las tarjetas */
+.proyecto-card,
+.reseña-card {
+    height: var(--card-height);
+    background: white;
+    border-radius: var(--card-border-radius);
+    box-shadow: var(--card-shadow);
+    padding: var(--card-padding);
+    margin-bottom: 2rem;
+    transition: all 0.2s ease;
+    display: flex;
+    flex-direction: column;
+    overflow: hidden;
+    border: 2px solid transparent;
+}
+
+.proyecto-card:hover,
+.reseña-card:hover {
+    transform: translateY(-5px);
+    border-color: var(--secondary-color);
+    box-shadow: 0 8px 15px rgba(231, 76, 60, 0.2);
+    transition: all 0.2s ease;
+}
+
+/* Servicios */
+.service-card {
+    background: linear-gradient(145deg, white, var(--light-color));
+    text-align: center;
+    justify-content: center;
+}
+
+.service-card i {
+    font-size: 3rem;
+    color: var(--secondary-color);
+    margin-bottom: 1.5rem;
+}
+
+.service-card h3 {
+    margin-bottom: 1rem;
+    color: var(--primary-color);
+}
+
+.service-card p {
+    color: var(--primary-color);
+    line-height: 1.6;
+}
+
+/* Navbar */
+.navbar-brand img {
+    transition: transform 0.3s ease;
+}
+
+.navbar-brand img:hover {
+    transform: scale(1.05);
+}
+
+.nav-link {
+    font-weight: 500;
+    color: var(--primary-color) !important;
+    position: relative;
+}
+
+.nav-link::after {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 50%;
+    width: 0;
+    height: 2px;
+    background-color: var(--secondary-color);
+    transition: all 0.2s ease;
+    transform: translateX(-50%);
+}
+
+.nav-link:hover::after {
+    width: 100%;
+}
+
+/* Footer */
+footer a {
+    transition: color 0.3s ease;
+}
+
+footer a:hover {
+    color: var(--secondary-color) !important;
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+    :root {
+        --card-height: auto;
+        --card-padding: 1rem;
+    }
+
+    body {
+        padding-top: 60px;
+    }
+
+    /* Mejora de la navegación móvil */
+    .navbar {
+        padding: 0.5rem 0;
+    }
+
+    .navbar-brand {
+        font-size: 1.2rem;
+    }
+
+    .navbar-brand img {
+        height: 40px;
+    }
+
+    .nav-link {
+        padding: 1rem !important;
+        font-size: 1.1rem;
+    }
+
+    /* Hero más compacto y legible */
+    .hero h1 {
+        font-size: 2rem;
+        line-height: 1.3;
+        margin-bottom: 1rem;
+    }
+
+    .hero .lead {
+        font-size: 1.1rem;
+        line-height: 1.5;
+    }
+
+    /* Botones más grandes y accesibles */
+    .btn {
+        padding: 1rem 2rem;
+        font-size: 1.1rem;
+        width: 100%;
+        margin: 0.5rem 0;
+        min-height: 48px; /* Tamaño mínimo recomendado para touch */
+    }
+
+    /* Tarjetas más compactas */
+    .skill-card, .proyecto-card, .reseña-card {
+        margin-bottom: 1rem;
+        padding: 1rem;
+    }
+
+    .skill-card {
+        min-height: 150px;
+    }
+
+    .skill-card i {
+        font-size: 1.8rem;
+    }
+
+    .skill-card h4 {
+        font-size: 1rem;
+        margin-bottom: 0.5rem;
+    }
+
+    /* Formulario más accesible */
+    .form-control {
+        height: 48px;
+        font-size: 1rem;
+        padding: 0.8rem;
+        margin-bottom: 1rem;
+    }
+
+    textarea.form-control {
+        height: auto;
+        min-height: 100px;
+    }
+
+    /* Ajustes de espaciado en secciones */
+    section {
+        padding: 2rem 0;
+    }
+
+    .container {
+        padding-left: 1rem;
+        padding-right: 1rem;
+    }
+
+    /* Mejoras en reseñas */
+    .reseña-card {
+        padding: 1rem;
+    }
+
+    .reseña-texto {
+        font-size: 1rem;
+        line-height: 1.5;
+        max-height: 150px;
+    }
+
+    .reseña-fotos {
+        height: 100px;
+    }
+
+    /* Footer más compacto */
+    footer {
+        padding: 1.5rem 0;
+        text-align: center;
+    }
+
+    footer .text-md-end {
+        text-align: center !important;
+        margin-top: 1rem;
+    }
+
+    footer a {
+        padding: 0.5rem;
+        margin: 0 0.5rem;
+        font-size: 1.5rem;
+    }
+
+    /* Ajustes de mapa */
+    .mapa-container {
+        height: 250px;
+    }
+
+    /* Mejora en la dirección */
+    .direccion-card {
+        padding: 1.5rem;
+        margin-bottom: 1.5rem;
+    }
+
+    /* Ocultar efectos innecesarios en móvil */
+    .cursor {
+        display: none;
+    }
+
+    .proyecto-card:hover,
+    .skill-card:hover,
+    .reseña-card:hover {
+        transform: none;
+    }
+
+    /* Ajuste del martillo para móvil */
+    .hammer-container {
+        display: none;
+    }
+
+    /* Mejorar legibilidad de overlay */
+    .proyecto-overlay {
+        background: linear-gradient(to top, rgba(44, 62, 80, 0.95), rgba(44, 62, 80, 0.7));
+        transform: translateY(0);
+        opacity: 1;
+    }
+
+    .proyecto-overlay h4 {
+        font-size: 1.2rem;
+        transform: none;
+        opacity: 1;
+    }
+
+    .proyecto-overlay p {
+        font-size: 0.9rem;
+        transform: none;
+        opacity: 1;
+    }
+}
+
+/* Animaciones */
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+        transform: translateY(20px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+.hero h1, .hero .lead {
+    animation: fadeIn 1s ease-out;
+}
+
+/* Proyectos */
+.proyecto-card {
+    background: linear-gradient(145deg, white, var(--light-color));
+}
+
+.proyecto-imagen {
+    height: 100%;
+    position: relative;
+    overflow: hidden;
+}
+
+.proyecto-overlay {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    background: linear-gradient(to top, var(--primary-color), transparent);
+    padding: 20px;
+    color: white;
+    transform: translateY(100%);
+    transition: transform 0.2s ease;
+}
+
+.proyecto-card:hover .proyecto-overlay {
+    transform: translateY(0);
+}
+
+.proyecto-overlay h4 {
+    margin: 0;
+    font-size: 1.5rem;
+    font-weight: 600;
+}
+
+.proyecto-overlay p {
+    margin: 5px 0 0;
+    font-size: 1rem;
+    opacity: 0.9;
+}
+
+/* Reseñas */
+.reseña-card {
+    background: linear-gradient(145deg, white, var(--light-color));
+}
+
+.reseña-header {
+    margin-bottom: 1rem;
+    display: flex;
+    align-items: center;
+}
+
+.reseña-avatar {
+    margin-right: 1rem;
+}
+
+.reseña-avatar i {
+    font-size: 2.5rem;
+    color: var(--secondary-color);
+}
+
+.reseña-info h5 {
+    color: var(--primary-color);
+    font-weight: 600;
+    margin: 0;
+}
+
+.reseña-info .fecha {
+    color: var(--secondary-color);
+    font-size: 0.9rem;
+    margin: 0;
+}
+
+.reseña-estrellas {
+    margin-bottom: 1rem;
+}
+
+.reseña-estrellas i {
+    color: var(--secondary-color);
+    font-size: 1.2rem;
+}
+
+.puntuacion {
+    margin-left: 0.5rem;
+    font-weight: 600;
+    color: var(--primary-color);
+}
+
+.reseña-proyecto .badge {
+    background-color: var(--primary-color) !important;
+    font-size: 0.9rem;
+    padding: 0.5rem 1rem;
+    transition: all 0.3s ease;
+}
+
+.reseña-proyecto .badge:hover {
+    background-color: var(--secondary-color) !important;
+}
+
+.reseña-texto {
+    color: var(--primary-color);
+    line-height: 1.6;
+    flex-grow: 1;
+    overflow-y: auto;
+    margin-bottom: 1rem;
+    padding-right: 0.5rem;
+}
+
+.reseña-texto::-webkit-scrollbar {
+    width: 4px;
+}
+
+.reseña-texto::-webkit-scrollbar-thumb {
+    background-color: var(--secondary-color);
+    border-radius: 4px;
+}
+
+.reseña-fotos {
+    height: 150px;
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 1rem;
+}
+
+.reseña-fotos img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    border-radius: 8px;
+    border: 2px solid var(--light-color);
+    transition: all 0.2s ease;
+}
+
+.reseña-fotos img:hover {
+    transform: scale(1.05);
+    border-color: var(--secondary-color);
+}
+
+/* Resumen de reseñas */
+.resumen-reseñas {
+    background: linear-gradient(145deg, white, var(--light-color));
+    padding: 2rem;
+    border-radius: var(--card-border-radius);
+    display: inline-block;
+    margin-top: 2rem;
+    box-shadow: var(--card-shadow);
+    border: 2px solid var(--secondary-color);
+}
+
+.calificacion-general h3 {
+    font-size: 3.5rem;
+    color: var(--secondary-color);
+    margin: 0;
+    font-weight: 700;
+}
+
+.estrellas-generales {
+    margin: 1rem 0;
+}
+
+.estrellas-generales i {
+    color: var(--secondary-color);
+    font-size: 1.5rem;
+    margin: 0 0.2rem;
+}
+
+.calificacion-general p {
+    color: #666;
+    margin: 0;
+}
+
+/* Ubicación */
+.ubicacion {
+    background-color: var(--light-color);
+}
+
+.direccion-card {
+    background: white;
+    padding: 2rem;
+    border-radius: 10px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    text-align: center;
+    height: 100%;
+}
+
+.direccion-card i {
+    font-size: 3rem;
+    color: var(--secondary-color);
+}
+
+.direccion-card h3 {
+    color: var(--primary-color);
+    margin-bottom: 1rem;
+}
+
+.direccion-card .lead {
+    color: var(--secondary-color);
+    font-weight: 600;
+}
+
+.direccion-card h4 {
+    color: var(--primary-color);
+    font-size: 1.2rem;
+    margin-bottom: 1rem;
+}
+
+.mapa-container {
+    border-radius: 10px;
+    overflow: hidden;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+@media (max-width: 768px) {
+    .direccion-card {
+        margin-bottom: 2rem;
+    }
+    
+    .mapa-container {
+        height: 300px;
+    }
+    
+    .mapa-container iframe {
+        height: 100%;
+    }
+}
+
+/* Sobre Nosotros */
+.sobre-nosotros-texto {
+    position: relative;
+    padding-right: 2rem;
+}
+
+.sobre-nosotros-texto h2 {
+    color: var(--primary-color);
+    font-weight: 700;
+    position: relative;
+    display: inline-block;
+}
+
+.sobre-nosotros-texto h2::after {
+    content: '';
+    position: absolute;
+    bottom: -10px;
+    left: 0;
+    width: 50px;
+    height: 3px;
+    background-color: var(--secondary-color);
+}
+
+.hammer-container {
+    position: absolute;
+    left: 315px;
+    top: 0;
+    transform-origin: center;
+}
+
+.hammer-icon {
+    font-size: 1.8rem;
+    color: var(--secondary-color);
+    transform-origin: center;
+    animation: hammerSwing 1s ease-in-out infinite;
+    transform: scaleX(-1);
+}
+
+@keyframes hammerSwing {
+    0%, 100% {
+        transform: scaleX(-1) rotate(0deg);
+    }
+    50% {
+        transform: scaleX(-1) rotate(20deg);
+    }
+}
+
+/* Skills */
+.skill-card {
+    background: linear-gradient(145deg, white, var(--light-color));
+    border-radius: var(--card-border-radius);
+    padding: 1.5rem;
+    text-align: center;
+    box-shadow: var(--card-shadow);
+    border: 2px solid transparent;
+    transition: all 0.2s ease;
+    animation: fadeIn 1s ease-out;
+}
+
+.skill-card:hover {
+    transform: translateY(-5px);
+    border-color: var(--secondary-color);
+    box-shadow: 0 8px 15px rgba(231, 76, 60, 0.2);
+    transition: all 0.2s ease;
+}
+
+.skill-card i {
+    font-size: 2rem;
+    color: var(--secondary-color);
+    margin-bottom: 1rem;
+}
+
+.skill-card h4 {
+    color: var(--primary-color);
+    font-size: 1.2rem;
+    margin-bottom: 1rem;
+}
+
+.skill-level {
+    background-color: var(--light-color);
+    height: 8px;
+    border-radius: 4px;
+    overflow: hidden;
+}
+
+.skill-bar {
+    height: 100%;
+    background-color: var(--secondary-color);
+    border-radius: 4px;
+    transform: scaleX(1);
+    transition: transform 0.5s ease;
+}
+
+.skill-card.aos-animate .skill-bar {
+    transform: scaleX(1);
+}
+
+@keyframes hammer-animation {
+    0% {
+        opacity: 0;
+        transform: translateY(50px) rotate(45deg);
+    }
+    50% {
+        transform: translateY(-5px) rotate(-5deg);
+    }
+    100% {
+        opacity: 1;
+        transform: translateY(0) rotate(0deg);
+    }
+}
+
+[data-aos="hammer-animation"] {
+    opacity: 0;
+    transform: translateY(50px) rotate(45deg);
+}
+
+[data-aos="hammer-animation"].aos-animate {
+    animation: hammer-animation 0.5s ease forwards;
+}
+
+/* Cursor personalizado */
+.cursor {
+    width: 20px;
+    height: 20px;
+    border: 2px solid var(--secondary-color);
+    border-radius: 50%;
+    position: fixed;
+    pointer-events: none;
+    z-index: 9999;
+    mix-blend-mode: difference;
+    transition: transform 0.2s ease;
+    transform: translate(-50%, -50%);
+}
+
+.cursor--clicked {
+    transform: translate(-50%, -50%) scale(0.8);
+}
+
+/* Efecto de glassmorphism en cards */
+.skill-card, .proyecto-card, .reseña-card, .direccion-card {
+    background: rgba(255, 255, 255, 0.7);
+    backdrop-filter: blur(10px);
+    -webkit-backdrop-filter: blur(10px);
+    border: 1px solid rgba(255, 255, 255, 0.3);
+}
+
+/* Efecto de neón en hover */
+.btn-primary:hover {
+    box-shadow: 0 0 20px var(--secondary-color);
+    text-shadow: 0 0 10px rgba(255,255,255,0.8);
+}
+
+/* Efecto de partículas en hero */
+.hero::after {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-image: radial-gradient(circle, #fff 1px, transparent 1px);
+    background-size: 50px 50px;
+    opacity: 0.1;
+    animation: particleFloat 20s infinite linear;
+}
+
+@keyframes particleFloat {
+    0% {
+        background-position: 0 0;
+    }
+    100% {
+        background-position: 50px 50px;
+    }
+}
+
+/* Efecto de ondas en hover */
+.proyecto-card::after {
+    content: '';
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    width: 0;
+    height: 0;
+    background: radial-gradient(circle, rgba(231,76,60,0.1) 0%, transparent 70%);
+    transition: all 0.5s ease;
+    border-radius: 50%;
+}
+
+.proyecto-card:hover::after {
+    width: 200%;
+    height: 200%;
+    top: -50%;
+    left: -50%;
+}
+
+/* Efecto de profundidad en cards */
+.skill-card, .proyecto-card, .reseña-card {
+    transform-style: preserve-3d;
+    perspective: 1000px;
+}
+
+.skill-card:hover, .proyecto-card:hover, .reseña-card:hover {
+    transform: translateY(-10px) rotateX(5deg);
+}
+
+/* Efecto de texto brillante */
+.hero h1, .hero .lead {
+    background: none;
+    -webkit-background-clip: initial;
+    background-clip: initial;
+}
+
+/* Efecto de scroll suave en imágenes */
+.proyecto-imagen {
+    clip-path: inset(0);
+    transition: clip-path 0.3s ease;
+}
+
+.proyecto-card:hover .proyecto-imagen {
+    clip-path: inset(5px);
+}
+
+/* Efecto de hover en redes sociales */
+.footer a {
+    position: relative;
+    display: inline-block;
+    transform-style: preserve-3d;
+    perspective: 1000px;
+}
+
+.footer a:hover i {
+    transform: rotateY(360deg);
+    color: var(--secondary-color);
+}
+
+.footer a i {
+    transition: transform 0.6s ease, color 0.3s ease;
+}
+
+/* Quitar efectos anteriores que ya no necesitamos */
+.proyecto-card:hover .proyecto-imagen {
+    clip-path: none;
+}
+
+.proyecto-card::after {
+    display: none;
+}
+
+/* Mejoras de accesibilidad generales */
+:focus {
+    outline: 3px solid var(--secondary-color) !important;
+    outline-offset: 2px !important;
+}
+
+.form-control:focus {
+    outline: none;
+    border-color: var(--secondary-color);
+    box-shadow: 0 0 0 3px rgba(231, 76, 60, 0.25);
+}
+
+/* Mejorar contraste de texto */
+.text-muted {
+    color: #666 !important;
+}
+
+/* Aumentar área de toque para enlaces */
+a, button {
+    touch-action: manipulation;
+} 

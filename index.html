@@ -3,166 +3,508 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>JM Reformas</title>
-    <link rel="icon" href="imagenes/logos/logo.ico" type="image/x-icon">
-    <link rel="stylesheet" href="nav.css">
-    <link rel="stylesheet" href="secction.css">
-    <link rel="stylesheet" href="footer.css">
-    <link rel="stylesheet" href="carrusel.css">
-    <link rel="stylesheet" href="ubicacion.css">
-    <link rel="stylesheet" href="servicios.css">
+    <title>Redecor - Transformando Espacios</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <link rel="stylesheet" href="https://unpkg.com/aos@2.3.1/dist/aos.css">
+    <link rel="stylesheet" href="styles.css">
 </head>
 <body>
-    <!-- Barra de navegación -->
-    <nav class="navbar">
-        <div class="navbar-container">
-            <a href="#" class="navbar-logo">
-                <img src="imagenes/logos/logo.png " alt="Logo">
+    <!-- Navbar -->
+    <nav class="navbar navbar-expand-lg navbar-light bg-light fixed-top">
+        <div class="container">
+            <a class="navbar-brand" href="#">
+                <img src="imagenes/logo.png" alt="JM Redecor SL Logo" height="50">
+                <span class="ms-2 fw-bold">JM Redecor SL</span>
             </a>
-            <ul class="navbar-menu">
-                <li><a href="#inicio">Inicio</a></li>
-                <li><a href="#acerca-de">Acerca de</a></li>
-                <li><a href="#servicios">Servicios</a></li>
-                <li><a href="#contacto">Contacto</a></li>
-            </ul>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav ms-auto">
+                    <li class="nav-item"><a class="nav-link" href="#inicio">Inicio</a></li>
+                    <li class="nav-item"><a class="nav-link" href="#nosotros">Nosotros</a></li>
+                    <li class="nav-item"><a class="nav-link" href="#proyectos">Proyectos</a></li>
+                    <li class="nav-item"><a class="nav-link" href="#contacto">Contacto</a></li>
+                </ul>
+            </div>
         </div>
     </nav>
 
-       <!-- Secciones -->
-       <div id="inicio" class="section">
-        <!-- Div para el logo (20% de la altura) -->
-        
-    
-        <!-- Contenedor para el texto y la imagen (80% de la altura) -->
-        <div class="inicio-contenedor">
-            <!-- Div para el texto (65%) -->
-            <div class="inicio-texto">
-                
-            </div>
-            <!-- Div para la imagen (35%) -->
-            <div class="inicio-imagen">
-                
+    <!-- Hero Section -->
+    <section id="inicio" class="hero">
+        <div class="container">
+            <div class="row align-items-center min-vh-100">
+                <div class="col-lg-6">
+                    <h1>JM Redecor SL</h1>
+                    <p class="lead">Transformamos tus espacios en lugares extraordinarios</p>
+                    <p class="mb-4">Expertos en diseño de interiores profesional para hogares y negocios desde 2010</p>
+                    <a href="#contacto" class="btn btn-primary btn-lg">Solicitar Consulta</a>
+                </div>
             </div>
         </div>
-    </div>
-    
-    
+    </section>
 
-    <div id="acerca-de" class="section">
-        <div class="acerca-de-contenedor">
-            <!-- Div para el texto (50%) -->
-            <div class="acerca-de-texto">
-                <h1>Acerca de</h1>
-                <p>Esta es la sección acerca de nosotros. Somos una empresa dedicada a ofrecer soluciones de calidad en reformas y construcción. Con años de experiencia, nos enorgullece brindar un servicio personalizado y profesional.</p>
-                <p>Nuestro equipo está compuesto por expertos en diseño, arquitectura y construcción, listos para hacer realidad tus proyectos.</p>
-            </div>
-            
-            <!-- Div para el carrusel (50%) -->
-            <div class="acerca-de-carrusel">
-                <div class="carrusel">
-                    <div class="carrusel-contenedor">
-                        <div class="carrusel-slide">
-                            <img src="https://i.pinimg.com/736x/f9/3d/18/f93d1807f62be44b12055235ce170ac9.jpg" alt="Imagen 1">
-                        </div>
-                        <div class="carrusel-slide">
-                            <img src="https://i.pinimg.com/736x/f9/3d/18/f93d1807f62be44b12055235ce170ac9.jpg" alt="Imagen 2">
-                        </div>
-                        <div class="carrusel-slide">
-                            <img src="https://i.pinimg.com/736x/f9/3d/18/f93d1807f62be44b12055235ce170ac9.jpg" alt="Imagen 3">
+    <!-- Sobre Nosotros -->
+    <section id="nosotros" class="py-5">
+        <div class="container">
+            <div class="row align-items-center">
+                <div class="col-lg-6 mb-4 mb-lg-0">
+                    <div class="sobre-nosotros-texto" data-aos="fade-right">
+                        <h2 class="mb-4">Sobre JM Redecor SL</h2>
+                        <p class="lead mb-4">En JM Redecor SL, nos apasiona transformar espacios ordinarios en extraordinarios. Con más de una década de experiencia, nuestro equipo de diseñadores expertos combina creatividad y funcionalidad para crear ambientes únicos.</p>
+                        <p class="mb-4">Cada proyecto es una oportunidad para innovar y superar expectativas, utilizando las últimas tendencias en diseño y materiales sostenibles.</p>
+                        <a href="#contacto" class="btn btn-primary">Solicitar Información</a>
+                        <div class="hammer-container">
+                            <i class="fas fa-hammer hammer-icon"></i>
                         </div>
                     </div>
-                    <button class="carrusel-btn carrusel-btn-prev">&#10094;</button>
-                    <button class="carrusel-btn carrusel-btn-next">&#10095;</button>
-                    
-                    <!-- Indicadores de posición -->
-                    <div class="carrusel-indicadores">
-                        <span class="indicador" data-index="0"></span>
-                        <span class="indicador" data-index="1"></span>
-                        <span class="indicador" data-index="2"></span>
+                </div>
+                <div class="col-lg-6">
+                    <div class="row g-4">
+                        <div class="col-6">
+                            <div class="skill-card">
+                                <i class="fas fa-pencil-ruler"></i>
+                                <h4>Diseño</h4>
+                                <div class="skill-level">
+                                    <div class="skill-bar" style="width: 95%"></div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-6">
+                            <div class="skill-card">
+                                <i class="fas fa-palette"></i>
+                                <h4>Color</h4>
+                                <div class="skill-level">
+                                    <div class="skill-bar" style="width: 90%"></div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-6">
+                            <div class="skill-card">
+                                <i class="fas fa-couch"></i>
+                                <h4>Mobiliario</h4>
+                                <div class="skill-level">
+                                    <div class="skill-bar" style="width: 92%"></div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-6">
+                            <div class="skill-card">
+                                <i class="fas fa-lightbulb"></i>
+                                <h4>Iluminación</h4>
+                                <div class="skill-level">
+                                    <div class="skill-bar" style="width: 88%"></div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-6">
+                            <div class="skill-card">
+                                <i class="fas fa-ruler-combined"></i>
+                                <h4>Espacios</h4>
+                                <div class="skill-level">
+                                    <div class="skill-bar" style="width: 94%"></div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-6">
+                            <div class="skill-card">
+                                <i class="fas fa-leaf"></i>
+                                <h4>Sostenibilidad</h4>
+                                <div class="skill-level">
+                                    <div class="skill-bar" style="width: 85%"></div>
+                                </div>
+                            </div>
+                        </div>
                     </div>
                 </div>
             </div>
         </div>
-    </div>
+    </section>
 
-    <div id="servicios">
-        <div class="servicios-header-container">
-            <div class="servicios-header">
-                <h1>Servicios</h1>
-                <p>Aquí encontrarás información sobre nuestros servicios. Te ofrecemos soluciones innovadoras y personalizadas para cada necesidad.</p>
+    <!-- Nuestra Oficina -->
+    <section id="proyectos" class="py-5">
+        <div class="container">
+            <h2 class="text-center mb-5">Nuestra Oficina</h2>
+            <div class="row g-4">
+                <div class="col-md-4">
+                    <div class="proyecto-card">
+                        <div class="proyecto-imagen">
+                            <img src="https://images.unsplash.com/photo-1497366216548-37526070297c" class="img-fluid" alt="Recepción">
+                            <div class="proyecto-overlay">
+                                <h4>Recepción</h4>
+                                <p>Área de bienvenida</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-4">
+                    <div class="proyecto-card">
+                        <div class="proyecto-imagen">
+                            <img src="https://images.unsplash.com/photo-1577412647305-991150c7d163" class="img-fluid" alt="Sala de Diseño">
+                            <div class="proyecto-overlay">
+                                <h4>Sala de Diseño</h4>
+                                <p>Donde la creatividad cobra vida</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-4">
+                    <div class="proyecto-card">
+                        <div class="proyecto-imagen">
+                            <img src="https://images.unsplash.com/photo-1577412647305-991150c7d163" class="img-fluid" alt="Sala de Reuniones">
+                            <div class="proyecto-overlay">
+                                <h4>Sala de Reuniones</h4>
+                                <p>Espacio para planificar tus sueños</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="text-center mt-5">
+                <p class="lead mb-4">¿Te gustaría conocer más sobre nuestros servicios?</p>
+                <a href="#contacto" class="btn btn-primary btn-lg">Agenda una Visita</a>
             </div>
         </div>
-    
-        <div class="servicios-cards-container">
-            <div class="servicio-card">
-                <img src="https://i.pinimg.com/736x/f9/3d/18/f93d1807f62be44b12055235ce170ac9.jpg" alt="Servicio 1" class="servicio-icono">
-                <h3>Reformas de Hogar</h3>
-                <p>Transformamos tu hogar con reformas a medida. ¡Haz realidad tus proyectos!</p>
-            </div>
-            <div class="servicio-card">
-                <img src="https://i.pinimg.com/736x/f9/3d/18/f93d1807f62be44b12055235ce170ac9.jpg" alt="Servicio 2" class="servicio-icono">
-                <h3>Construcción</h3>
-                <p>Ofrecemos soluciones de construcción robustas y de calidad para tu espacio.</p>
-            </div>
-            <div class="servicio-card">
-                <img src="https://i.pinimg.com/736x/f9/3d/18/f93d1807f62be44b12055235ce170ac9.jpg" alt="Servicio 3" class="servicio-icono">
-                <h3>Diseño de Interiores</h3>
-                <p>Con un enfoque innovador, diseñamos espacios que se ajustan a tus gustos.</p>
-            </div>
-            <div class="servicio-card">
-                <img src="https://i.pinimg.com/736x/f9/3d/18/f93d1807f62be44b12055235ce170ac9.jpg" alt="Servicio 4" class="servicio-icono">
-                <h3>Reformas de Oficinas</h3>
-                <p>Modernizamos espacios de trabajo para mejorar la productividad y comodidad.</p>
-            </div>
-            <div class="servicio-card">
-                <img src="https://i.pinimg.com/736x/f9/3d/18/f93d1807f62be44b12055235ce170ac9.jpg" alt="Servicio 5" class="servicio-icono">
-                <h3>Rehabilitación de Edificios</h3>
-                <p>Restauramos estructuras con un enfoque en la conservación y la modernidad.</p>
-            </div>
-            <div class="servicio-card">
-                <img src="https://i.pinimg.com/736x/f9/3d/18/f93d1807f62be44b12055235ce170ac9.jpg" alt="Servicio 6" class="servicio-icono">
-                <h3>Asesoría y Consultoría</h3>
-                <p>Te guiamos en la planificación de tus proyectos con consejos expertos.</p>
+    </section>
+
+    <!-- Ubicación -->
+    <section class="ubicacion py-5">
+        <div class="container">
+            <h2 class="text-center mb-5">Encuéntranos</h2>
+            <div class="row">
+                <div class="col-md-6 mb-4">
+                    <div class="direccion-card">
+                        <i class="fas fa-map-marker-alt mb-4"></i>
+                        <h3>Nuestra Ubicación</h3>
+                        <p class="lead">C/ Elfo 137 Local 4</p>
+                        <p>Madrid, España</p>
+                        <div class="mt-4">
+                            <h4>Horario de Atención</h4>
+                            <p>Lunes a Viernes: 9:00 - 19:00</p>
+                            <p>Sábados: 10:00 - 14:00</p>
+                            <a href="#contacto" class="btn btn-primary mt-3">Contactar Ahora</a>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-6">
+                    <div class="mapa-container">
+                        <iframe 
+                            src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3037.0976666317247!2d-3.6541891!3d40.4269873!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0xd422f9a4a3a9fcb%3A0x7f80b780f8e2a0ce!2sC.%20del%20Elfo%2C%20137%2C%20Local%204%2C%2028027%20Madrid!5e0!3m2!1ses!2ses!4v1708484521276!5m2!1ses!2ses"
+                            width="100%" 
+                            height="450" 
+                            style="border:0;" 
+                            allowfullscreen="" 
+                            loading="lazy" 
+                            referrerpolicy="no-referrer-when-downgrade">
+                        </iframe>
+                    </div>
+                </div>
             </div>
         </div>
-    </div>
-    
+    </section>
 
-    <div id="contacto" class="section">
-        <div class="contacto-contenedor">
-            <!-- Div para el texto (50%) -->
-            <div class="contacto-texto">
-                <h1>Contacto</h1>
-                <p>C/ Elfo 137 Local 4.</p>
-                <p class="p2">Madrid, España</p>
-                
-                
-                
+    <!-- Reseñas -->
+    <section class="reseñas py-5 bg-light">
+        <div class="container">
+            <h2 class="text-center mb-5">Lo que dicen nuestros clientes sobre JM Redecor SL</h2>
+            <div class="row">
+                <div class="col-md-4 mb-4">
+                    <div class="reseña-card">
+                        <div class="reseña-header">
+                            <div class="reseña-avatar">
+                                <i class="fas fa-user-circle"></i>
+                            </div>
+                            <div class="reseña-info">
+                                <h5>María González</h5>
+                                <p class="fecha">Hace 2 semanas</p>
+                            </div>
+                        </div>
+                        <div class="reseña-estrellas">
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <span class="puntuacion">5.0</span>
+                        </div>
+                        <div class="reseña-proyecto">
+                            <span class="badge bg-primary">Diseño Residencial</span>
+                        </div>
+                        <p class="reseña-texto">"Redecor transformó completamente nuestra casa. Su atención al detalle y profesionalismo son excepcionales. El equipo fue muy amable y cumplieron con todos los plazos establecidos."</p>
+                        <div class="reseña-fotos">
+                            <img src="https://images.unsplash.com/photo-1600210492486-724fe5c67fb0" alt="Antes" class="img-fluid rounded">
+                            <img src="https://images.unsplash.com/photo-1600607687939-ce8a6c25118c" alt="Después" class="img-fluid rounded">
+                        </div>
+                    </div>
+                </div>
+
+                <div class="col-md-4 mb-4">
+                    <div class="reseña-card">
+                        <div class="reseña-header">
+                            <div class="reseña-avatar">
+                                <i class="fas fa-user-circle"></i>
+                            </div>
+                            <div class="reseña-info">
+                                <h5>Carlos Ramírez</h5>
+                                <p class="fecha">Hace 1 mes</p>
+                            </div>
+                        </div>
+                        <div class="reseña-estrellas">
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star-half-alt"></i>
+                            <span class="puntuacion">4.5</span>
+                        </div>
+                        <div class="reseña-proyecto">
+                            <span class="badge bg-primary">Diseño Comercial</span>
+                        </div>
+                        <p class="reseña-texto">"El diseño de nuestra oficina ha mejorado significativamente la productividad del equipo. Las áreas comunes son ahora espacios inspiradores y funcionales."</p>
+                        <div class="reseña-fotos">
+                            <img src="https://images.unsplash.com/photo-1497366216548-37526070297c" alt="Oficina" class="img-fluid rounded">
+                        </div>
+                    </div>
+                </div>
+
+                <div class="col-md-4 mb-4">
+                    <div class="reseña-card">
+                        <div class="reseña-header">
+                            <div class="reseña-avatar">
+                                <i class="fas fa-user-circle"></i>
+                            </div>
+                            <div class="reseña-info">
+                                <h5>Ana Martínez</h5>
+                                <p class="fecha">Hace 3 días</p>
+                            </div>
+                        </div>
+                        <div class="reseña-estrellas">
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <span class="puntuacion">5.0</span>
+                        </div>
+                        <div class="reseña-proyecto">
+                            <span class="badge bg-primary">Remodelación</span>
+                        </div>
+                        <p class="reseña-texto">"Increíble trabajo en la remodelación de mi apartamento. El equipo supo captar exactamente lo que quería y el resultado superó mis expectativas."</p>
+                        <div class="reseña-fotos">
+                            <img src="https://images.unsplash.com/photo-1600566753086-00f18fb6b3ea" alt="Remodelación" class="img-fluid rounded">
+                        </div>
+                    </div>
+                </div>
             </div>
-            
-            <!-- Div con imagen enlazada a ubicación (50%) -->
-            <div class="contacto-mapa">
-                <a href="https://www.google.com/maps?q=40.436944, -3.643333" target="_blank">
-                    <img src="imagenes/logos/ubi.png" alt="Ubicación en el mapa">
-                </a>
+
+            <div class="text-center mt-4">
+                <div class="resumen-reseñas">
+                    <div class="calificacion-general">
+                        <h3>4.8</h3>
+                        <div class="estrellas-generales">
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                        </div>
+                        <p>Basado en 150+ reseñas verificadas</p>
+                        <a href="#contacto" class="btn btn-primary mt-3">¡Sé Parte de Nuestros Clientes Satisfechos!</a>
+                    </div>
+                </div>
             </div>
         </div>
-    </div>
+    </section>
 
-    <!-- Pie de página -->
-    <footer class="footer">
-        <div class="footer-container">
-            <p>&copy; 2025 JM REFORMAS SL. Todos los derechos reservados.</p>
-            <ul class="footer-links">
-                <li><a href="#inicio">Inicio</a></li>
-                <li><a href="#acerca-de">Acerca de</a></li>
-                <li><a href="#servicios">Servicios</a></li>
-                <li><a href="#contacto">Contacto</a></li>
-            </ul>
-            
+    <!-- Contacto -->
+    <section id="contacto" class="py-5 bg-light">
+        <div class="container">
+            <h2 class="text-center mb-5">Contacta con JM Redecor SL</h2>
+            <div class="row">
+                <div class="col-lg-6 mx-auto">
+                    <form id="contactForm" onsubmit="return sendEmail(event)">
+                        <div class="mb-3">
+                            <input type="text" class="form-control" id="nombre" placeholder="Nombre completo" required>
+                        </div>
+                        <div class="mb-3">
+                            <input type="tel" class="form-control" id="telefono" placeholder="Número de teléfono" required>
+                        </div>
+                        <div class="mb-3">
+                            <input type="email" class="form-control" id="email" placeholder="Email" required>
+                        </div>
+                        <div class="mb-3">
+                            <textarea class="form-control" id="mensaje" rows="5" placeholder="Mensaje" required></textarea>
+                        </div>
+                        <button type="submit" class="btn btn-primary w-100">Enviar Mensaje</button>
+                        <div id="alertaExito" class="alert alert-success mt-3 d-none">
+                            ¡Mensaje enviado con éxito! Nos pondremos en contacto contigo pronto.
+                        </div>
+                        <div id="alertaError" class="alert alert-danger mt-3 d-none">
+                            Hubo un error al enviar el mensaje. Por favor, inténtalo de nuevo.
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="bg-dark text-light py-4">
+        <div class="container">
+            <div class="row">
+                <div class="col-md-6">
+                    <h5>JM Redecor SL</h5>
+                    <p>Transformando espacios, creando experiencias desde 2010.</p>
+                    <p class="mt-3">
+                        <strong>CIF:</strong> B12345678<br>
+                        <strong>Registro Mercantil:</strong> Madrid, Tomo 1234, Folio 56, Hoja M-123456
+                    </p>
+                </div>
+                <div class="col-md-6 text-md-end">
+                    <p>Síguenos en redes sociales:</p>
+                    <a href="#" class="text-light me-3"><i class="fab fa-facebook"></i></a>
+                    <a href="#" class="text-light me-3"><i class="fab fa-instagram"></i></a>
+                    <a href="#" class="text-light"><i class="fab fa-linkedin"></i></a>
+                    <p class="mt-3">© 2024 JM Redecor SL. Todos los derechos reservados.</p>
+                </div>
+            </div>
         </div>
     </footer>
 
-    <script src="div.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@emailjs/browser@3/dist/email.min.js"></script>
+    <script>
+        AOS.init({
+            duration: 500,
+            offset: 100,
+            once: true
+        });
+
+        // Inicializar EmailJS
+        (function() {
+            emailjs.init("0Dwozb-UVxDX4vud5");
+        })();
+
+        // Efecto de navbar al hacer scroll
+        window.addEventListener('scroll', function() {
+            const navbar = document.querySelector('.navbar');
+            if (window.scrollY > 100) {
+                navbar.classList.add('scrolled');
+            } else {
+                navbar.classList.remove('scrolled');
+            }
+        });
+
+        // Animación de números en las skills
+        const observerSkills = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    const bar = entry.target.querySelector('.skill-bar');
+                    const width = bar.style.width;
+                    bar.style.width = '0%';
+                    setTimeout(() => {
+                        bar.style.width = width;
+                    }, 100);
+                }
+            });
+        }, { threshold: 0.5 });
+
+        document.querySelectorAll('.skill-card').forEach(card => {
+            observerSkills.observe(card);
+        });
+
+        // Animación de números en calificación
+        const observerRating = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    const rating = entry.target;
+                    const targetNum = parseFloat(rating.textContent);
+                    let currentNum = 0;
+                    const duration = 2000;
+                    const increment = targetNum / (duration / 16);
+                    
+                    function updateNumber() {
+                        if (currentNum < targetNum) {
+                            currentNum = Math.min(currentNum + increment, targetNum);
+                            rating.textContent = currentNum.toFixed(1);
+                            requestAnimationFrame(updateNumber);
+                        }
+                    }
+                    
+                    updateNumber();
+                }
+            });
+        }, { threshold: 0.5 });
+
+        document.querySelectorAll('.calificacion-general h3').forEach(rating => {
+            observerRating.observe(rating);
+        });
+
+        // Efecto parallax en hero
+        window.addEventListener('scroll', function() {
+            const hero = document.querySelector('.hero');
+            const scrolled = window.pageYOffset;
+            hero.style.backgroundPositionY = -(scrolled * 0.5) + 'px';
+        });
+
+        // Función para enviar email
+        function sendEmail(event) {
+            event.preventDefault();
+
+            const alertaExito = document.getElementById('alertaExito');
+            const alertaError = document.getElementById('alertaError');
+            const btnSubmit = event.target.querySelector('button[type="submit"]');
+            
+            const nombre = document.getElementById('nombre').value;
+            const telefono = document.getElementById('telefono').value;
+            const email = document.getElementById('email').value;
+            const mensaje = document.getElementById('mensaje').value;
+
+            btnSubmit.disabled = true;
+            btnSubmit.innerHTML = 'Enviando...';
+
+            alertaExito.classList.add('d-none');
+            alertaError.classList.add('d-none');
+
+            emailjs.send(
+                "service_80bj80n",
+                "template_shhds88",
+                {
+                    from_name: nombre,
+                    phone: telefono,
+                    reply_to: email,
+                    message: mensaje
+                }
+            ).then(
+                function(response) {
+                    alertaExito.classList.remove('d-none');
+                    event.target.reset();
+                },
+                function(error) {
+                    alertaError.classList.remove('d-none');
+                }
+            ).finally(() => {
+                btnSubmit.disabled = false;
+                btnSubmit.innerHTML = 'Enviar Mensaje';
+            });
+
+            return false;
+        }
+
+        // Efecto de cursor personalizado
+        const cursor = document.createElement('div');
+        cursor.className = 'cursor';
+        document.body.appendChild(cursor);
+
+        document.addEventListener('mousemove', (e) => {
+            cursor.style.left = e.clientX + 'px';
+            cursor.style.top = e.clientY + 'px';
+        });
+
+        document.addEventListener('mousedown', () => cursor.classList.add('cursor--clicked'));
+        document.addEventListener('mouseup', () => cursor.classList.remove('cursor--clicked'));
+    </script>
 </body>
 </html>
